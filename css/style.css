@@ -1,33 +1,79 @@
+:root{
+--background:#f5f5f5;
+--surface:#ffffff;
+--text:#111111;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.app{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.card{
+    width: 400px;
+    background-color: var(--surface);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.732);
+}
 body{
-    background-color: rgb(133, 132, 132);
+    background-color: var(--background);
+    min-height: 100vh;  
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    font-family: Arial, sans-serif;
 }
-header{
-    background-color:  rgb(162,161,161);
+.card-header {
+    background-color: var(--surface);
+    height: 100px;
+    margin-bottom: 30px;
 }
+.card-header h1{
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+.card-header p{
+    color: #666;
+    line-height: 1.5;
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}   
 .areadetexto{
-    transform: translateY(75px);
-    color: white;
-    background-color: rgb(86, 86, 86);
-    text-align: center;
-    width: 300px;
-    height: 150px;
+    width: 50*2%;
+    height: 180px;
     resize: none;
-}
-
-.hablar{
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background-color: #3f3f3f;
     color: white;
-    background-color: rgb(0, 0, 0);
-    width: 300px;
-    height: 150px;
-    transition: background 0.5s linear;
+    font-size: 16px;
+    font-family: inherit;
+}
+.hablar{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
 }
 
 .hablar:hover{
-    background-color: rgb(162,161,161);
-    transform: translateY(-10px);
-    box-shadow: 100px;
+    background-color:#333;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    color: var(--background);
 }
