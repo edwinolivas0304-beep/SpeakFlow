@@ -8,6 +8,9 @@ const tiempo = document.getElementById("tiempo");
 botonContinuar.style.display = 'none';
 botonPausar.style.display='none';
 botonDetener.style.display='none';
+function tienetexto(){
+    return (textarea.value.trim()!=="")
+}
 textarea.addEventListener("input", () => {
     contador.textContent = `${textarea.value.trim().length} caracteres`;
         const palabras = textarea.value.trim() === "" 
@@ -20,11 +23,14 @@ textarea.addEventListener("input", () => {
 }
 
 });
+
 botonReproducir.addEventListener("click", () => {
+    if(tienetexto()){
     hablar(textarea.value.trimStart());
     botonPausar.style.display='block';
     botonDetener.style.display='block';
     botonContinuar.style.display='none';
+    };
 });
 botonPausar.addEventListener("click", () => {
     pausar();
