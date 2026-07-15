@@ -18,3 +18,12 @@ function hablar(texto){
     speechSynthesis.speak(voz);
 
 }
+function pausar(){
+speechSynthesis.pause();
+}
+function continuar(){
+speechSynthesis.resume();
+}
+function detener(){
+speechSynthesis.cancel();
+}
