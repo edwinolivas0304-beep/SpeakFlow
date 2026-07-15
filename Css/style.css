@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(158, 158, 158);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.areadetexto{
+    color: white;
+    background-color: rgb(86, 86, 86);
+    text-align: center;
+    width: 300px;
+    height: 150px;
+}
+
+.hablar{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+    height: 150px;
+
+    transition: background 1s linear;
+}
+
+.hablar:hover{
+    background-color: rgb(162,161,161);
+    transform: translateY(-10px);
+    box-shadow: 100px;
+}
