@@ -1,17 +1,21 @@
 body{
-    background-color: rgb(158, 158, 158);
+    background-color: rgb(133, 132, 132);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-
+header{
+    background-color:  rgb(162,161,161);
+}
 .areadetexto{
+    transform: translateY(75px);
     color: white;
     background-color: rgb(86, 86, 86);
     text-align: center;
     width: 300px;
     height: 150px;
+    resize: none;
 }
 
 .hablar{
@@ -19,8 +23,7 @@ body{
     background-color: rgb(0, 0, 0);
     width: 300px;
     height: 150px;
-
-    transition: background 1s linear;
+    transition: background 0.5s linear;
 }
 
 .hablar:hover{

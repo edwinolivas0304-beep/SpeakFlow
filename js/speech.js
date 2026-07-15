@@ -11,10 +11,10 @@ function hablar(texto){
         return;
     }
 
-    window.speechSynthesis.cancel();
+    speechSynthesis.cancel();
 
     voz.text = texto;
 
-    window.speechSynthesis.speak(voz);
+    speechSynthesis.speak(voz);
 
 }
