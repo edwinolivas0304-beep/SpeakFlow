@@ -2,7 +2,7 @@ const voz = new SpeechSynthesisUtterance();
 voz.volume = 1;
 voz.rate = 1;
 voz.pitch = 1;
-
+voz.lang = "es-ES";
 function hablar(texto){
 
     if(texto.trim() === ""){
@@ -10,17 +10,16 @@ function hablar(texto){
     }
 
     speechSynthesis.cancel();
-    speechSynthesis.getVoices();
     voz.text = texto;
     speechSynthesis.speak(voz);
 
 }
 function pausar(){
-speechSynthesis.pause();
+    speechSynthesis.pause();
 }
 function continuar(){
-speechSynthesis.resume();
+    speechSynthesis.resume();
 }
 function detener(){
-speechSynthesis.cancel();
+    speechSynthesis.cancel();
 }

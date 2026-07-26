@@ -7,10 +7,14 @@ const botonContinuar=document.getElementById("continuar");
 const tiempo = document.getElementById("tiempo");
 const selectorvoz= document.getElementById("voz");
 let voces=[];
+    const idioma = document.getElementById("idioma");
+    idioma.addEventListener("change", () => {
+        voz.lang = idioma.value;
+    });
 speechSynthesis.onvoiceschanged = () => {
     voces = speechSynthesis.getVoices();
+    selectorVoz.innerHTML = "";
     voces.forEach((element, index) => {
-    console.log(element.name+"( "+element.lang+" )");
     const option=document.createElement("option");
     option.textContent=element.name+" ("+element.lang+")";
     option.value= index;
@@ -18,13 +22,13 @@ speechSynthesis.onvoiceschanged = () => {
     });
 };
 selectorvoz.addEventListener("change",()=>{
-    const vozSeleccionada=selectorvoz.value;
+    const vozSeleccionada=Number(selectorvoz.value);
     voz.voice=voces[vozSeleccionada];
 })
 botonContinuar.style.display = 'none';
 botonPausar.style.display='none';
 botonDetener.style.display='none';
-function tienetexto(){
+function tieneTexto(){
     return (textarea.value.trim()!=="")
 }
 textarea.addEventListener("input", () => {
@@ -38,11 +42,6 @@ textarea.addEventListener("input", () => {
     tiempo.textContent = `${Math.ceil(minutos)} min lectura`;
 }
 
-});
-
-const idioma = document.getElementById("idioma");
-idioma.addEventListener("change", () => {
-    voz.lang = idioma.value;
 });
 
 botonReproducir.addEventListener("click", () => {
