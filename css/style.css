@@ -84,3 +84,12 @@ body{
     transform: translateY(-3px);
     background-color: #555;
 }
+.idioma{
+    width: 40%;
+    align-self: auto;
+    color: #666;
+    background-color: var(--surface);
+    border-radius: 20px;
+    padding: 0.5px;
+    justify-content: space-between;
+}

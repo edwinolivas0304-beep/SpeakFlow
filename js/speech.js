@@ -1,6 +1,4 @@
 const voz = new SpeechSynthesisUtterance();
-
-voz.lang = "es-ES";
 voz.volume = 1;
 voz.rate = 1;
 voz.pitch = 1;
@@ -12,9 +10,8 @@ function hablar(texto){
     }
 
     speechSynthesis.cancel();
-
+    speechSynthesis.getVoices();
     voz.text = texto;
-
     speechSynthesis.speak(voz);
 
 }

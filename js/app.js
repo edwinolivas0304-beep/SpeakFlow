@@ -5,6 +5,22 @@ const botonPausar = document.getElementById("pausar");
 const botonDetener = document.getElementById("detener");
 const botonContinuar=document.getElementById("continuar");
 const tiempo = document.getElementById("tiempo");
+const selectorvoz= document.getElementById("voz");
+let voces=[];
+speechSynthesis.onvoiceschanged = () => {
+    voces = speechSynthesis.getVoices();
+    voces.forEach((element, index) => {
+    console.log(element.name+"( "+element.lang+" )");
+    const option=document.createElement("option");
+    option.textContent=element.name+" ("+element.lang+")";
+    option.value= index;
+    selectorvoz.appendChild(option);
+    });
+};
+selectorvoz.addEventListener("change",()=>{
+    const vozSeleccionada=selectorvoz.value;
+    voz.voice=voces[vozSeleccionada];
+})
 botonContinuar.style.display = 'none';
 botonPausar.style.display='none';
 botonDetener.style.display='none';
@@ -22,6 +38,11 @@ textarea.addEventListener("input", () => {
     tiempo.textContent = `${Math.ceil(minutos)} min lectura`;
 }
 
+});
+
+const idioma = document.getElementById("idioma");
+idioma.addEventListener("change", () => {
+    voz.lang = idioma.value;
 });
 
 botonReproducir.addEventListener("click", () => {
