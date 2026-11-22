@@ -1,10 +1,12 @@
 const voz = new SpeechSynthesisUtterance();
+var lenguaje=document.getElementById("idioma")
 voz.volume = 1;
 voz.rate = 1;
 voz.pitch = 1;
-voz.lang = "es-ES";
-function hablar(texto){
+voz.lang = "'"+lenguaje.value+"'";
 
+function hablar(texto){
+console.log(voz.lang)
     if(texto.trim() === ""){
         return;
     }

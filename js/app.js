@@ -6,6 +6,8 @@ const botonDetener = document.getElementById("detener");
 const botonContinuar=document.getElementById("continuar");
 const tiempo = document.getElementById("tiempo");
 const selectorvoz= document.getElementById("voz");
+
+//funciones de logica
 let voces=[];
     const idioma = document.getElementById("idioma");
     idioma.addEventListener("change", () => {
@@ -13,7 +15,7 @@ let voces=[];
     });
 speechSynthesis.onvoiceschanged = () => {
     voces = speechSynthesis.getVoices();
-    selectorVoz.innerHTML = "";
+    selectorvoz.innerHTML = '<option value="">Selecciona una voz</option> <option value="${voces}">';
     voces.forEach((element, index) => {
     const option=document.createElement("option");
     option.textContent=element.name+" ("+element.lang+")";
@@ -31,6 +33,7 @@ botonDetener.style.display='none';
 function tieneTexto(){
     return (textarea.value.trim()!=="")
 }
+
 textarea.addEventListener("input", () => {
     contador.textContent = `${textarea.value.trim().length} caracteres`;
         const palabras = textarea.value.trim() === "" 
@@ -43,9 +46,9 @@ textarea.addEventListener("input", () => {
 }
 
 });
-
+ //ordenamiento de css
 botonReproducir.addEventListener("click", () => {
-    if(tienetexto()){
+    if(tieneTexto()){
     hablar(textarea.value.trimStart());
     botonPausar.style.display='block';
     botonDetener.style.display='block';

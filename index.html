@@ -17,12 +17,14 @@
             <h1>SpeakFlow</h1>
             <p>Transformador de texto en voz de forma rápida y sencilla.</p>
             <select list="idioma" class="select" id="idioma" placeholder="Selecciona">
+                <option value="">Selecciona idioma</option>
             <option value="es-ES">Español</option>
             <option value="en-US">English</option>
             <option value="fr-FR">France</option>
             </select>
             <select id="voz" class="select">
             </select>
+            <p>Si no hay voz seleccionada se usa la default.</p>
         </header>
         <section class="controls">
             <textarea id="ingresa" class="areadetexto" placeholder="Escribe aquí tu texto">
@@ -39,7 +41,7 @@
             ⏸ Pausar
         </button>
         <button id="continuar">
-            ▶ Continuar
+            ▶⏸ Continuar
         </button>
         <button id="detener">
             ■ Detener
@@ -48,7 +50,7 @@
         </section>
     </section>
 </main>
-        <script src="js/speech.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/speech.js"></script>
 </body>
 </html>
